@@ -5,13 +5,7 @@ function QuestionList({ questions, onDeleteQuestion, onUpdateQuestion }) {
     fetch(`http://localhost:4000/questions/${id}`, {
       method: "DELETE",
     })
-      .then((res) => {
-        if (res.ok) {
-          onDeleteQuestion(id);
-        } else {
-          throw new Error("Failed to delete question");
-        }
-      })
+      .then((res) => {onDeleteQuestion(id);})
       .catch((err) => console.error("Error deleting question:", err));
   }
 
